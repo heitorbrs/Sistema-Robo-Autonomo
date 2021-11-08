@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robô Autônomo</title>
+
+<script type="text/javascript">
+        
+        function buscar_objeto() {
+            document.getElementById('visor').value='buscando...';
+        }
+
+        function cancelar() {
+            document.getElementById('visor').value='ALERTA: a entrega foi cancelada';
+        }
+
+        function ver_relatorio () {
+            document.getElementById('visor').value='xxx objetos entregues com sucesso';
+        }
+
+        function controle_manual () {
+            document.getElementById('visor').value='Controle manual ativado';
+        }
+
+        function limpar_visor() {
+            document.getElementById('visor').value='';
+        }
+
+</script>
+
+<style type="text/css">
+
+   *{
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    #cabecalho {
+
+        /*fundo*/
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        left: 0px;
+        top: 0px;
+
+        background: #8257E5;
+
+        /*texto*/
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 45px;
+        text-align: center;
+
+        color: #FFFFFF;
+        
+    }
+
+    #corpo {
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        padding-top: 60px;
+
+        background: rgba(89, 86, 242, 0.13);
+    }
+
+    #botoes{
+
+        width: 500px;
+        padding-top: 50px;
+        float: left;
+    }
+
+    input[type="button"]{ 
+    
+    font-weight: bold;
+    width: 200px;
+    height: 40px;
+    
+    margin: 25px 0px 25px 100px;
+  
+
+    background: #04D361;
+    border-radius: 10px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+    }
+
+    input[type="button"]:hover {
+
+        background-color: #4CAF50;
+       /* color: white;*/
+    }
+
+    input[type="text"]{  
+        
+        /*fundo*/
+        position: relative;
+        width: 300px;
+        height: 235px;
+
+        background: rgba(152, 113, 245, 0.19);
+        border-radius: 20px;
+    
+        /*texto*/
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+     
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        color: #4F4F4F;
+
+        margin-top: 75px;
+        left: 30px;
+
+    }
+
+
+    #botoes_visor {
+
+        background: rgba(211, 4, 128, 0.77);
+
+        width: 100px;
+        position: relative;
+        float: left;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+        margin-top: 25px;
+        margin-left: 50px;
+    }
+
+   #botoes_visor:hover {
+
+background-color: rgb(167, 44, 117);
+/* color: white;*/
+}
+
+    #rodape {
+
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        left: 0px;
+
+        background: #8257E5;
+        bottom: 0;
+    }
+        
+</style>
+
+</head>
+<body>
+    <div id="cabecalho">
+        Controle do robô
+    </div>
+    <div id="corpo">
+        <div id="botoes">
+            <div>
+                <input type="button" value="Buscar Objeto" onclick="buscar_objeto()"> 
+            </div>
+            <div>
+                <input type="button" value="Cancelar" onclick="cancelar()">
+            </div>
+            <div>
+                <input type="button" value="Ver relatório" onclick="ver_relatorio()"> 
+            </div>
+            <div>
+                <input type="button" value="Controle manual" onclick="controle_manual()"> 
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="text" name="visor_de_informacoes" id="visor">
+            </div>
+            <div>
+                <div id="botoes_lado_a_lado">
+                    <input type="button" value="Limpar" id="botoes_visor" onclick="limpar_visor()"> 
+                </div>
+                <div id="botoes_lado_a_lado">
+                    <input type="button" value="OK" id="botoes_visor" onclick="ok()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rodape">
+
+    </div>
+</body>
+</html>
